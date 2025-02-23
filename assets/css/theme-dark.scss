@@ -1,0 +1,519 @@
+$white-color: #ffffff;
+$main-color: #6749f1;
+$main-color-dark: #6344f5;
+$main-color-2: #d365f1;
+$dark-color: #1d1d1d;
+$bg-color: #252525;
+$card-bg: #0e0e0e;
+
+.switch-box {
+    position: fixed;
+    bottom: 15px;
+    right: 120px;
+    z-index: 9999;
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        border: 1.5px solid $main-color;
+        transition: 0.4s;
+        &::before {
+            position: absolute;
+            content: "";
+            height: 25px;
+            width: 25px;
+            left: 0px;
+            bottom: 4px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            transition: 0.4s;
+            box-shadow: 0 0px 15px #2020203d;
+            background: white url('../images/night.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &.round {
+            border-radius: 34px;
+            &::before {
+                border-radius: 50%;
+            }
+        }
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+    input:checked + .slider {
+        background-color: transparent;
+        border: 1.5px solid $main-color-2;
+    }
+      
+    input:focus + .slider {
+        box-shadow: 0 0 1px $main-color-2;
+    }
+      
+    input:checked + .slider:before {
+        transform: translateX(24px);
+        background: white url('../images/sunny.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.theme-dark {
+    $title-main: #ffffff;
+    $paragraph: #ffffff;
+    h1, h2, h3, h4, h5, h6 {
+        color: $white-color !important; 
+    }
+    h3 {
+        color: $white-color !important; 
+        a {
+            color: $white-color !important;
+            transition: 0.7s;
+            &:hover {
+                color: $main-color !important;
+            }
+        }
+    }
+    span {
+        color: $white-color !important; 
+    }
+    p {
+        color: $white-color !important; 
+    }
+    body {
+        background: $dark-color;
+        color: $white-color; 
+    }
+    .form-group {
+        label {
+            color: $white-color;
+        }
+    }
+    .form-control {
+        background-color: $card-bg !important;
+        color: $white-color !important;
+    }
+    .nice-select {
+        background-color: $card-bg ;
+    }
+    .list {
+        background-color: $card-bg ;
+        .option {
+            color: $white-color !important;
+        }
+    }
+    .option {
+        &.selected {
+            color: $white-color;
+            background-color: $main-color;
+        }
+        &:hover {
+            color: $white-color;
+            background-color: $main-color;
+        }
+        &.focus {
+            color: $white-color;
+            background-color: $main-color;
+        }
+        &.selected {
+            &.focus {
+                color: $white-color;
+                background-color: $main-color;
+            }
+        }
+    }
+    ul {
+        li {
+            color: $white-color !important;
+        }
+    }
+    .navbar-area {
+        .main-nav {
+            nav {
+                .navbar-nav  {
+                    .nav-item {
+                        .dropdown-menu {
+                            background-color: $bg-color !important;
+                            li {
+                                a {
+                                    color: $white-color !important;
+                                    &.active {
+                                        color: $main-color-2 !important;
+                                    }
+                                    &:hover {
+                                        color: $main-color-2 !important;
+                                    }
+                                }
+                            }
+                        }
+                    }   
+                }
+            }
+        }
+    }
+    
+    .navbar-area {
+        &.is-sticky {
+           background-color: $bg-color;
+            .main-nav {
+                nav {
+                    .navbar-nav {
+                        .nav-item {
+                            a {
+                                color: $white-color;
+                                &.active {
+                                    color: $main-color-2;
+                                    &:hover {
+                                        color: $main-color-2;
+                                    }
+                                }
+                            }
+                            &:hover {
+                                a {
+                                    color: $main-color-2;
+                                    &.active {
+                                        color: $main-color-2;
+                                    }
+                                }
+                            }
+                            .dropdown-menu {
+                                .nav-item {
+                                    a {
+                                        color: $white-color;
+                                        transition: all 0.3s linear;
+                                        &.active {
+                                            color: $main-color-2;
+                                            &:hover {
+                                                color: $main-color-2;
+                                            }
+                                        }
+                                    }
+                                    &:hover {
+                                        &>a {
+                                            color: $main-color-2;
+                                            &.active {
+                                                color: $main-color-2;
+                                            }
+                                        }
+                                    }
+                                    .dropdown-menu {
+                                        .nav-item {
+                                            a {
+                                                color: $white-color;;
+                                                transition: all 0.3s linear;
+                                                &.active {
+                                                    color: $main-color-2;
+                                                }
+                                            }
+                                            &:hover {
+                                                &>a {
+                                                    color: $main-color-2;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .navbar-option-search {
+                a {
+                    color: $white-color;
+                    &:hover {
+                        color: $main-color-2;
+                    }
+                }
+            }
+            .navbar-option-cart {
+                a {
+                    color: $white-color;
+                    &:hover {
+                        color: $main-color-2;
+                    }
+                }
+            }
+            .main-brand {
+                opacity: 1;
+            }
+            .hover-brand {
+                opacity: 0;
+            }
+            .mobile-nav {
+                .navbar-option-item {
+                    button {
+                        color: #6749f1;
+                    }
+                }
+            }
+        }
+    }
+    .mean-container {
+        a {
+            &.meanmenu-reveal {
+                color: $white-color !important;
+                span {
+                    background-color: $white-color !important;
+                }
+            }
+        }
+        .mean-bar {
+            background-color: $bg-color;
+        }
+        .navbar-nav {
+            background-color: $dark-color;
+        }
+        .mean-nav {
+            .navbar-nav {
+                .nav-item {
+                    a {
+                        color: $white-color;
+                        &.active {
+                            color: $main-color-2 !important;
+                        }
+                        &:hover {
+                            color: $main-color-2 !important;
+                        }
+                    }
+                    .dropdown-menu {
+                        background-color: $dark-color;
+                    }
+                }
+            }
+        }
+    }
+    .header-bg {
+        &::before {
+            background-image: radial-gradient(circle, #0a0a0ad9 0%, #0a0a0ad9 100%);
+        }
+    }
+    .bottom-frame {
+        &::before {
+            opacity: 0.3;
+        }
+    }
+    .header-page-bg {
+        &::before {
+            background: #000000cc;
+            background-image: radial-gradient(circle, #1515154d 0%, #0909094d 100%);
+        }
+    }
+    .page-bg-1 {
+        background-image: linear-gradient(90deg, #080808e6 100%, #2416631c 0%, #2416631c 0%, #0b0a0be6 100%), url(../images/page-bg/bg-1.jpg);
+    }
+    .about-list-item {
+        &:hover {
+            background-color: $card-bg;
+        }
+    }
+    .page-bg-2 {
+        background-image: linear-gradient(90deg, #080808e6 100%, #2416631c 0%, #2416631c 0%, #0b0a0be6 100%), url(../images/page-bg/bg-2.jpg);
+    }
+    .page-bg-4 {
+        background-image: linear-gradient(90deg, #080808e6 100%, #2416631c 0%, #2416631c 0%, #0b0a0be6 100%),url(../images/page-bg/bg-5.jpg);
+    }
+    .before-bg {
+        &::after {
+            background: $card-bg;
+        }
+    }
+    .bg-off-white {
+        background-color: #111010;
+    }
+    .bg-shape-1 {
+        display: none;
+    }
+    .feature-card-white {
+        background-color: $card-bg;
+    }
+    .feature-card-content {
+        .social-list {
+            li {
+                a {
+                    i {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+    .blog-card {
+        background-color: $card-bg;
+    }
+    .blog-entry {
+        background-color: $bg-color;
+    }
+    .page-bg-3 {
+        background-image: linear-gradient(90deg, #080808e6 100%, #2416631c 0%, #2416631c 0%, #0b0a0be6 100%), url(../images/page-bg/bg-4.jpg);
+    }
+    .bg-blue {
+        background-color: $card-bg;
+    }
+    .info-box {
+        background-color: $card-bg;
+    }
+    .info-box-list-details {
+        color: $white-color;
+        a {
+            color: $white-color;
+        }
+    }
+    .page-link {
+        color: $white-color;
+        background-color: $card-bg;
+        &:hover {
+            background-color: $main-color;
+            color: $white-color;
+        }
+    }
+    .page-item {
+        &:first-child {
+            .page-link {
+                color: $white-color;
+                background-color: $card-bg;
+                &:hover {
+                    background-color: $main-color;
+                    color: $white-color;
+                }
+            }
+        }
+        &:last-child {
+            .page-link {
+                color: $white-color;
+                &:hover {
+                    background-color: $main-color;
+                    color: $white-color;
+                }
+            }
+        }
+        &.disabled {
+            .page-link {
+                color: $white-color;
+                background-color: $card-bg;
+            }
+        }
+        &.active {
+            .page-link {
+                background-color: $main-color;
+                color: $white-color;
+            }
+        }
+    }
+    .sidebar-search {
+        .form-group {
+            background-color: $card-bg;
+            button {
+                color: $white-color;
+            }
+        }
+    }
+    .category-list, .blog-details-tag  {
+        li {
+            a {
+                background-color: $card-bg;
+                color: $white-color;
+                &:hover {
+                    background-color: $main-color;
+                }
+            }
+        }
+    }
+    .forum-details-block {
+        background-color: $bg-color;
+    }
+    .blockquote {
+        background-color: $card-bg;
+    }
+    .social-list {
+        li {
+            a {
+                color: $white-color;
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+    .review-holder-item {
+        background-color: $bg-color;
+    }
+    .input-checkbox {
+        label {
+            color: $white-color;
+        }
+    }
+    .accordion-collapse {
+        background-color: $bg-color;
+    }
+    .accordion-body {
+        color: $white-color;
+    }
+    .contact-box {
+        background-color: $bg-color;
+    }
+    .product-list-search {
+        .form-group {
+            background-color: $card-bg;
+        }
+    }
+    .cart-quantity {
+        input, button {
+            color: $white-color;
+        }
+    }
+    .product-slider-for {
+        background-color: $card-bg;
+    }
+    .product-slider-nav {
+        .item {
+            background-color: $card-bg;
+        }
+    }
+    .cart-table {
+        table {
+            tbody {
+                tr {
+                    td {color: $white-color;}
+                }
+            }
+        }
+    }
+    .cart-coupon {
+        form {
+            .form-group {
+                background-color: $card-bg;
+            }
+        }
+    }
+    .account-sidebar-list {
+        li {
+            a {
+                color: $white-color;
+            }
+        }
+    }
+    .billing-address {
+        address {
+            color: $white-color;
+        }
+    }
+    .coming-soon-section {
+        background-color: $card-bg;
+        background-image: linear-gradient(90deg, rgba(7, 7, 7, 0.54) 100%, rgba(30, 30, 31, 0.11) 0%, rgba(24, 24, 24, 0.11) 0%, rgba(22, 15, 48, 0.54) 100%), url(../images/page-bg/bg-1.jpg);
+    }
+}
