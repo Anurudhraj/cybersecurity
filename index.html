@@ -57,36 +57,47 @@
 
         
 
-        /* Modal */
         .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Adjust width for small screens */
+    max-width: 500px; /* Prevent it from being too wide */
+    max-height: 90vh; /* Prevent it from overflowing */
+    overflow-y: auto; /* Allow scrolling if content is large */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
 
-        .modal-content {
-            background: white;
-            padding: 20px;
-            width: 90%;
-            max-width: 400px;
-            border-radius: 8px;
-            position: relative;
-            text-align: center;
-        }
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 18px;
-            cursor: pointer;
-        }
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.qr-code {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .modal {
+        width: 95%;
+        max-width: 90%;
+        max-height: 80vh;
+    }
+}
 
         .form-group {
             margin-bottom: 15px;
