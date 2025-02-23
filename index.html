@@ -70,8 +70,14 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allows scrolling */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
 }
-
+/* Hide scrollbar for Chrome, Safari, Opera */
+.modal::-webkit-scrollbar {
+    display: none;
+}
 .modal-content {
     display: flex;
     flex-direction: column;
